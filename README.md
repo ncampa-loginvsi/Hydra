@@ -2,6 +2,16 @@
 
 PowerShell automation scripts for provisioning and configuring Login Enterprise target machines.
 
+## Quick Start
+
+To use any script from this repo in Hydra:
+
+1. Create a new script in Hydra
+2. Rename it as needed
+3. Copy and paste the contents of the desired script from this repo
+
+This workflow applies to every script below — pick the one that fits your use case, paste it in, and adjust the configuration variables at the top.
+
 ## Scripts
 
 ### ConfigureSysInternalsAutoLogon.ps1
