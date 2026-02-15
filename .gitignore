@@ -1,0 +1,17 @@
+# Claude Code
+.claude/
+
+# PowerShell
+*.psm1.bak
+*.psd1.bak
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+~$*
