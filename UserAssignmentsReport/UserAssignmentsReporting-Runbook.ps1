@@ -94,16 +94,16 @@
 
 .EXAMPLE
     # As an Automation runbook (PowerShell 7.2 runtime, system-assigned MI)
-    ./Current-Reporting.ps1 `
+    ./UserAssignmentsReporting-Runbook.ps1 `
         -SubscriptionId '<sub-guid>' -TenantId '<tenant-guid>' `
         -To 'client@example.com' -Sender 'avd-reports@example.com'
 
 .EXAMPLE
     # Dry-run test against a single host pool - no CSV written, no email sent
-    ./Current-Reporting.ps1 -HostPool 'hp-customer-prod-01' -WhatIf
+    ./UserAssignmentsReporting-Runbook.ps1 -HostPool 'hp-customer-prod-01' -WhatIf
 
 .NOTES
-    Author : FieldWork runbook (generic template - cleansed of customer values)
+    Generic template (cleansed of customer values) - field-tested against a live tenant.
     Requires: Azure Automation PowerShell 7.2 runtime with the Az.Accounts
               module (preinstalled), a system- or user-assigned managed
               identity enabled on the Automation Account, and outbound HTTPS
@@ -153,7 +153,7 @@ param(
     [string]$Subject = '',
 
     # Footer/signature line at the bottom of the email body.
-    [string]$BodyFooter = 'This is an automated message from the FieldWork AVD reporting runbook.',
+    [string]$BodyFooter = 'This is an automated message from the AVD reporting runbook.',
 
     # =========================================================================
     # TESTING toggle.
@@ -161,7 +161,7 @@ param(
     #   CSV to disk or send the email. Flip the default below for repeated
     #   testing, or pass -WhatIf / -WhatIf:$false on the command line to override.
     # =========================================================================
-    [switch]$WhatIf = $false,
+    [switch]$WhatIf = $true,
 
     # =========================================================================
     # Managed identity - system-assigned by default. Only set this if the
